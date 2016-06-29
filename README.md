@@ -10,7 +10,7 @@ Install the latest package by entering the following command in `Package Manager
 
 `Install-Package CaptchaGen`
 
-Visit this [link](https://sample/gf) for previous versions
+Visit this [link](https://www.nuget.org/packages/CaptchaGen) for previous versions
 
 Alternatively you can clone this repo and build it yourself and refer this project in your main project.
 
