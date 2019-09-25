@@ -6,7 +6,7 @@ namespace CaptchaGen
 {
     public static class AudioFactory
     {
-        const int SPEECHRATE = -7;
+        private const int SPEECHRATE = -7;
 
         /// <summary>
         /// Generates and returns an audio stream for the given string.

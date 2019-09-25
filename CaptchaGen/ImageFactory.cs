@@ -14,17 +14,16 @@ namespace CaptchaGen
         /// Default value = 18
         /// </summary>
         public static int Distortion { get; set; } = 18;
-        const int HEIGHT = 96;
-        const int WIDTH = 150;
-        const string FONTFAMILY  = "Arial";
-        const int FONTSIZE = 25;
+        private const int HEIGHT = 96;
+        private const int WIDTH = 150;
+        private const string FONTFAMILY  = "Arial";
+        private const int FONTSIZE = 25;
 
         /// <summary>
         /// Background color to be used.
         /// Default value = Color.Wheat
         /// </summary>
         public static Color BackgroundColor { get; set; } = Color.Wheat;
-
 
         /// <summary>
         /// Generates the image with default image properties(150px X 96px) and distortion
@@ -79,7 +78,6 @@ namespace CaptchaGen
             MemoryStream memoryStream = new MemoryStream();
             Bitmap captchaImage = new Bitmap(imageWidth, imageHeight, System.Drawing.Imaging.PixelFormat.Format64bppArgb);
             Bitmap cache = new Bitmap(imageWidth, imageHeight, System.Drawing.Imaging.PixelFormat.Format64bppArgb);
-
 
             Graphics graphicsTextHolder = Graphics.FromImage(captchaImage);
             graphicsTextHolder.Clear(BackgroundColor);
