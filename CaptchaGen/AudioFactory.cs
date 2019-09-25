@@ -15,7 +15,7 @@ namespace CaptchaGen
         /// <returns>MemoryStream of audio</returns>
         public static MemoryStream GenerateAudio(string captchaCode)
         {
-            if (captchaCode == null || captchaCode == String.Empty || captchaCode.Trim() == "")
+            if (captchaCode == null || captchaCode == string.Empty || captchaCode.Trim() == "")
             {
                 throw new ArgumentException("Illegal value for captchaCode");
             }
@@ -33,7 +33,7 @@ namespace CaptchaGen
         /// <returns>MemoryStream of audio</returns>
         public static MemoryStream GenerateAudio(string captchaCode, int speechRate)
         {
-            if (captchaCode == null || captchaCode == String.Empty || captchaCode.Trim() == "")
+            if (captchaCode == null || captchaCode == string.Empty || captchaCode.Trim() == "")
             {
                 throw new ArgumentException("Illegal value for captchaCode");
             }
@@ -64,7 +64,7 @@ namespace CaptchaGen
                 synthesizer.SetOutputToWaveStream(audioStream);
 
                 //add a space between all characters to spell it out.
-                string val = String.Join<char>(" ", input);
+                string val = string.Join<char>(" ", input);
                 synthesizer.Speak(val);
 
             }));
