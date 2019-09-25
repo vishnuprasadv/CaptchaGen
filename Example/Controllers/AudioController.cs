@@ -20,7 +20,7 @@ namespace Example.Controllers
         {
             try
             {
-                HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+                var response = new HttpResponseMessage(HttpStatusCode.OK);
                 var audioStream = AudioFactory.GenerateAudio(id);
                 audioStream.Position = 0;
                 response.Content = new StreamContent(audioStream);

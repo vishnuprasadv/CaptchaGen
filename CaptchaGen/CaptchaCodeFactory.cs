@@ -21,7 +21,7 @@ namespace CaptchaGen
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var stringChars = new char[size];
             int number;
-            byte[] fillBuffer = new byte[4];
+            var fillBuffer = new byte[4];
 
             //CryptoService random byte generator for randomization
             RNGCryptoServiceProvider rngCSP = new RNGCryptoServiceProvider();

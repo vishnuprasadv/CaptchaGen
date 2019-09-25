@@ -9,7 +9,7 @@ namespace CaptchaGen.Tests
         [TestMethod()]
         public void GenerateAudioTest()
         {
-            String testString = "fEwS21";
+            var testString = "fEwS21";
             var stream = AudioFactory.GenerateAudio(testString);
             Assert.IsNotNull(stream);
         }
@@ -17,7 +17,7 @@ namespace CaptchaGen.Tests
         [TestMethod()]
         public void GenerateAudioTestWithROI()
         {
-            String testString = "fEwS21";
+            var testString = "fEwS21";
             var stream = AudioFactory.GenerateAudio(testString,-7);
             Assert.IsNotNull(stream);
         }
@@ -26,7 +26,7 @@ namespace CaptchaGen.Tests
         [ExpectedException(typeof(ArgumentException), "Error is not thrown for an illegal captchaCode")]
         public void GenerateAudioIllegalCaptchaCodeTest()
         {
-            String testString = "";
+            var testString = "";
             var stream = AudioFactory.GenerateAudio(testString, -7);
         }
 
@@ -34,7 +34,7 @@ namespace CaptchaGen.Tests
         [ExpectedException(typeof(ArgumentException), "Error is not thrown for an null captchaCode")]
         public void GenerateAudioEmptyCaptchaCodeTest()
         {
-            String testString = null;
+            string testString = null;
             var stream = AudioFactory.GenerateAudio(testString, -7);
         }
 
@@ -42,7 +42,7 @@ namespace CaptchaGen.Tests
         [ExpectedException(typeof(ArgumentOutOfRangeException),"Error is not thrown for an illegal speechRate")]
         public void ThrowExceptionOnSpeechRateTest()
         {
-            String testString = "fEwS21";
+            var testString = "fEwS21";
             var stream = AudioFactory.GenerateAudio(testString, -73);
         }
     }

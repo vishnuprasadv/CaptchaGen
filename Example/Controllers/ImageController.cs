@@ -22,7 +22,7 @@ namespace Example.Controllers
             {
                 var imageStream = ImageFactory.GenerateImage(id);
                 imageStream.Position = 0;
-                HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+                var response = new HttpResponseMessage(HttpStatusCode.OK);
                 response.Content = new StreamContent(imageStream);
                 response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
                 return response;

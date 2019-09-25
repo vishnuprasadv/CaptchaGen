@@ -75,18 +75,18 @@ namespace CaptchaGen
         private static MemoryStream BuildImage(string captchaCode, int imageHeight, int imageWidth, int fontSize, int distortion)
         {
             int newX, newY;
-            MemoryStream memoryStream = new MemoryStream();
-            Bitmap captchaImage = new Bitmap(imageWidth, imageHeight, System.Drawing.Imaging.PixelFormat.Format64bppArgb);
-            Bitmap cache = new Bitmap(imageWidth, imageHeight, System.Drawing.Imaging.PixelFormat.Format64bppArgb);
+            var memoryStream = new MemoryStream();
+            var captchaImage = new Bitmap(imageWidth, imageHeight, System.Drawing.Imaging.PixelFormat.Format64bppArgb);
+            var cache = new Bitmap(imageWidth, imageHeight, System.Drawing.Imaging.PixelFormat.Format64bppArgb);
 
-            Graphics graphicsTextHolder = Graphics.FromImage(captchaImage);
+            var graphicsTextHolder = Graphics.FromImage(captchaImage);
             graphicsTextHolder.Clear(BackgroundColor);
             graphicsTextHolder.DrawString(captchaCode, new Font(FONTFAMILY, fontSize, FontStyle.Italic), new SolidBrush(Color.Gray), new PointF(8.4F, 20.4F));
 
             //Distort the image with a wave function
-            for (int y = 0; y < imageHeight; y++)
+            for (var y = 0; y < imageHeight; y++)
             {
-                for (int x = 0; x < imageWidth; x++)
+                for (var x = 0; x < imageWidth; x++)
                 {
                     newX = (int)(x + (distortion * Math.Sin(Math.PI * y / 64.0)));
                     newY = (int)(y + (distortion * Math.Cos(Math.PI * x / 64.0)));

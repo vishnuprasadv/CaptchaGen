@@ -9,7 +9,7 @@ namespace CaptchaGen.Tests
         [TestMethod()]
         public void GenerateCaptchaCodeTest()
         {
-            string captcha = CaptchaGen.CaptchaCodeFactory.GenerateCaptchaCode(6);
+            var captcha = CaptchaGen.CaptchaCodeFactory.GenerateCaptchaCode(6);
             Assert.IsTrue(captcha.Length == 6);
         }
 
@@ -17,7 +17,7 @@ namespace CaptchaGen.Tests
         [ExpectedException(typeof(ArgumentException), "Error is not thrown for an illegal size")]
         public void GenerateCaptchaCodeTest1()
         {
-            string captcha = CaptchaGen.CaptchaCodeFactory.GenerateCaptchaCode(-2);
+            var captcha = CaptchaGen.CaptchaCodeFactory.GenerateCaptchaCode(-2);
         }
     }
 }

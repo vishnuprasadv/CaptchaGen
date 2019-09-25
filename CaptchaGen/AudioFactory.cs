@@ -55,16 +55,16 @@ namespace CaptchaGen
         /// <returns>MemoryStream of audio</returns>
         private static MemoryStream GetAudio(string input,int speechRate)
         {
-            MemoryStream audioStream = new MemoryStream();
+            var audioStream = new MemoryStream();
 
             var t = new System.Threading.Thread(new System.Threading.ThreadStart(() =>
             {
-                SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+                var synthesizer = new SpeechSynthesizer();
                 synthesizer.Rate = speechRate;
                 synthesizer.SetOutputToWaveStream(audioStream);
 
                 //add a space between all characters to spell it out.
-                string val = string.Join<char>(" ", input);
+                var val = string.Join<char>(" ", input);
                 synthesizer.Speak(val);
 
             }));
