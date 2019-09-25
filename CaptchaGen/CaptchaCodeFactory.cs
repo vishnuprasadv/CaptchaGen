@@ -17,15 +17,13 @@ namespace CaptchaGen
             {
                 throw new ArgumentException("Size cannot be less than or equal to 0");
             }
-            string captcha = null;
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             var stringChars = new char[size];
             int number;
             var fillBuffer = new byte[4];
 
             //CryptoService random byte generator for randomization
-            RNGCryptoServiceProvider rngCSP = new RNGCryptoServiceProvider();
-
+            var rngCSP = new RNGCryptoServiceProvider();
 
             for (int i = 0; i < stringChars.Length; i++)
             {
@@ -34,7 +32,7 @@ namespace CaptchaGen
                 stringChars[i] = chars[number];
             }
 
-            captcha = new string(stringChars);
+            var captcha = new string(stringChars);
 
             return captcha;
         }
