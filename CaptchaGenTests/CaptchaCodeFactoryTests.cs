@@ -17,7 +17,7 @@ namespace CaptchaGen.Tests
         [ExpectedException(typeof(ArgumentException), "Error is not thrown for an illegal size")]
         public void GenerateCaptchaCodeTest1()
         {
-            var captcha = CaptchaGen.CaptchaCodeFactory.GenerateCaptchaCode(-2);
+            _ = CaptchaGen.CaptchaCodeFactory.GenerateCaptchaCode(-2);
         }
     }
 }

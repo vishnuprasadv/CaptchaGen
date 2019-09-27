@@ -27,7 +27,7 @@ namespace CaptchaGen.Tests
         public void GenerateAudioIllegalCaptchaCodeTest()
         {
             var testString = "";
-            var stream = AudioFactory.GenerateAudio(testString, -7);
+            _ = AudioFactory.GenerateAudio(testString, -7);
         }
 
         [TestMethod()]
@@ -35,7 +35,7 @@ namespace CaptchaGen.Tests
         public void GenerateAudioEmptyCaptchaCodeTest()
         {
             string testString = null;
-            var stream = AudioFactory.GenerateAudio(testString, -7);
+            _ = AudioFactory.GenerateAudio(testString, -7);
         }
 
         [TestMethod()]
@@ -43,7 +43,7 @@ namespace CaptchaGen.Tests
         public void ThrowExceptionOnSpeechRateTest()
         {
             var testString = "fEwS21";
-            var stream = AudioFactory.GenerateAudio(testString, -73);
+            _ = AudioFactory.GenerateAudio(testString, -73);
         }
     }
 }
